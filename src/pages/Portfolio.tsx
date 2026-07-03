@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ExternalLink, Globe, Monitor, Smartphone, Layout, Bot, Sparkles, Building2, Rocket, Cpu } from "lucide-react";
+import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
 import { motion } from "framer-motion";
@@ -96,6 +97,14 @@ const portfolioItems = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600&h=400",
     link: null,
     icon: Cpu,
+  },
+  {
+    title: "Atelier",
+    category: "landing",
+    desc: "Fullscreen hero landing page untuk design agency dengan video background, mobile menu, dan tipografi premium.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600&h=400",
+    link: "/atelier",
+    icon: Rocket,
   },
 ];
 
@@ -205,7 +214,7 @@ const Portfolio = () => {
                           </div>
                           <h3 className="text-sm font-semibold text-[#111111] dark:text-[#F4F4F5] truncate">{item.title}</h3>
                         </div>
-                        {item.link && (
+                        {item.link && item.link.startsWith("http") ? (
                           <a
                             href={item.link}
                             target="_blank"
@@ -215,13 +224,23 @@ const Portfolio = () => {
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
-                        )}
+                        ) : item.link ? (
+                          <Link
+                            to={item.link}
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors shrink-0"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        ) : null}
                       </div>
                       <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed line-clamp-2">{item.desc}</p>
                     </div>
-                    {item.link && (
+                    {item.link && item.link.startsWith("http") ? (
                       <a href={item.link} target="_blank" rel="noreferrer" className="absolute inset-0" />
-                    )}
+                    ) : item.link ? (
+                      <Link to={item.link} className="absolute inset-0" />
+                    ) : null}
                   </motion.div>
                 );
               })}

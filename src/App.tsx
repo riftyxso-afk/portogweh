@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import Education from "./pages/Education.tsx";
 import Projects from "./pages/Projects.tsx";
 import Portfolio from "./pages/Portfolio.tsx";
+import Atelier from "./pages/Atelier.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Guestbook from "./pages/Guestbook.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
         <Route path="/education" element={<Education />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/atelier" element={<Atelier />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/notes" element={<Guestbook />} />
         <Route path="*" element={<NotFound />} />

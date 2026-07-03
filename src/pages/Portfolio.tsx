@@ -126,7 +126,7 @@ const portfolioItems = [
     title: "Axion Studio",
     category: "landing",
     desc: "Design agency hero dengan shader background animated, pill navbar, dan case studies video cards.",
-    image: "https://images.unsplash.com/photo-1617195737480-b76d0c5a1b8b?auto=format&fit=crop&q=80&w=600&h=400",
+    image: "/previews/axion-studio.png",
     link: "/axion",
     icon: Rocket,
   },

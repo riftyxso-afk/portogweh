@@ -1,0 +1,80 @@
+- generic [ref=f24e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f24e3]:
+    - generic [ref=f24e4]:
+      - navigation [ref=f24e5]:
+        - generic [ref=f24e6]:
+          - generic [ref=f24e7]:
+            - generic [ref=f24e9]: AX
+            - generic [ref=f24e10]:
+              - link "Projects" [ref=f24e11] [cursor=pointer]:
+                - /url: "#"
+              - link "Studio" [ref=f24e12] [cursor=pointer]:
+                - /url: "#"
+              - link "Journal" [ref=f24e13] [cursor=pointer]:
+                - /url: "#"
+              - link "Connect" [ref=f24e14] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f24e15]:
+            - generic [ref=f24e16]: Taking on projects for Q1 2026
+            - generic [ref=f24e17]:
+              - img [ref=f24e18]
+              - generic [ref=f24e21]: 10:34 in London
+            - button "Book a strategy call Book a strategy call" [ref=f24e22] [cursor=pointer]:
+              - generic [ref=f24e23]:
+                - generic [ref=f24e24]: Book a strategy call
+                - generic [ref=f24e25]: Book a strategy call
+              - img [ref=f24e27]
+      - generic [ref=f24e31]:
+        - paragraph [ref=f24e32]: Axion Studio
+        - heading "We craft digital experiences for brands ready to dominate their category online." [level=1] [ref=f24e33]:
+          - text: We craft digital experiences
+          - text: for brands ready to dominate
+          - text: their category online.
+        - generic [ref=f24e34]:
+          - button "Start a project Start a project" [ref=f24e35] [cursor=pointer]:
+            - generic [ref=f24e36]:
+              - generic [ref=f24e37]: Start a project
+              - generic [ref=f24e38]: Start a project
+            - img [ref=f24e40]
+          - generic [ref=f24e42]:
+            - img [ref=f24e43]
+            - generic [ref=f24e45]: Certified Partner
+            - generic [ref=f24e46]: Featured
+    - generic [ref=f24e48]:
+      - generic [ref=f24e49]:
+        - generic [ref=f24e50]: "1"
+        - generic [ref=f24e51]: Introducing Axion
+      - heading "Strategy-led creatives, delivering results in digital and beyond." [level=2] [ref=f24e52]:
+        - text: Strategy-led creatives, delivering
+        - text: results in digital and beyond.
+      - generic [ref=f24e56]:
+        - paragraph [ref=f24e57]:
+          - text: Through research, creative thinking
+          - text: and iteration we help growing brands
+          - text: realize their digital full potential.
+        - button "About our studio About our studio" [ref=f24e59] [cursor=pointer]:
+          - generic [ref=f24e60]:
+            - generic [ref=f24e61]: About our studio
+            - generic [ref=f24e62]: About our studio
+          - img [ref=f24e64]
+    - generic [ref=f24e68]:
+      - generic [ref=f24e69]:
+        - generic [ref=f24e70]: "2"
+        - generic [ref=f24e71]: Featured client work
+      - heading "Our projects" [level=2] [ref=f24e72]
+      - generic [ref=f24e73]:
+        - generic [ref=f24e74]:
+          - generic [ref=f24e78] [cursor=pointer]:
+            - generic [ref=f24e79]: Learn more
+            - img [ref=f24e81]
+          - paragraph [ref=f24e84]: Winner of Site of the Month 2025 — an interactive 3D showcase driving record engagement
+          - heading "Narrativ" [level=3] [ref=f24e85]
+        - generic [ref=f24e86]:
+          - generic [ref=f24e90] [cursor=pointer]:
+            - generic [ref=f24e91]: View case study
+            - img [ref=f24e92]
+          - paragraph [ref=f24e94]: Transforming a dated platform into a conversion-focused brand experience
+          - heading "Luminar" [level=3] [ref=f24e95]

@@ -1,0 +1,35 @@
+- generic [ref=f28e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f28e3]:
+    - navigation [ref=f28e5]:
+      - generic [ref=f28e6]:
+        - generic [ref=f28e7]:
+          - img [ref=f28e8]
+          - generic [ref=f28e10]: securify
+        - generic [ref=f28e11]:
+          - link "platform" [ref=f28e12] [cursor=pointer]:
+            - /url: "#"
+          - link "solutions" [ref=f28e13] [cursor=pointer]:
+            - /url: "#"
+          - link "company" [ref=f28e14] [cursor=pointer]:
+            - /url: "#"
+          - link "support" [ref=f28e15] [cursor=pointer]:
+            - /url: "#"
+        - link "get started" [ref=f28e16] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f28e17]:
+      - generic [ref=f28e18]:
+        - generic [ref=f28e21]: +65k
+        - paragraph [ref=f28e22]: startups use
+      - heading "protect" [level=1] [ref=f28e23]
+      - heading "your" [level=1] [ref=f28e24]
+      - heading "data" [level=1] [ref=f28e25]
+      - paragraph [ref=f28e26]: we can guarding your data with utmost care, empowering you with privacy everywhere
+      - generic [ref=f28e27]:
+        - generic [ref=f28e29]: +1.5b
+        - paragraph [ref=f28e31]: gb data was protected
+      - generic [ref=f28e32]:
+        - generic [ref=f28e35]: +300k
+        - paragraph [ref=f28e36]: downloads

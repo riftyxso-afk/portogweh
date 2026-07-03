@@ -1,0 +1,241 @@
+- generic [active] [ref=f27e1]:
+  - generic [ref=f27e2]:
+    - navigation [ref=f27e3]:
+      - generic [ref=f27e4]:
+        - link "The Micro Agent Company the Micro Agent Company" [ref=f27e5] [cursor=pointer]:
+          - /url: "#"
+          - img "The Micro Agent Company" [ref=f27e6]
+          - generic [ref=f27e7]:
+            - generic [ref=f27e8]: the
+            - generic [ref=f27e9]: Micro Agent
+            - generic [ref=f27e10]: Company
+        - generic [ref=f27e11]:
+          - link "Products" [ref=f27e12] [cursor=pointer]:
+            - /url: /products
+          - link "Agents" [ref=f27e13] [cursor=pointer]:
+            - /url: /agents
+          - link "Use Cases" [ref=f27e14] [cursor=pointer]:
+            - /url: /use-cases
+          - link "Pricing" [ref=f27e15] [cursor=pointer]:
+            - /url: /pricing
+          - link "Docs" [ref=f27e16] [cursor=pointer]:
+            - /url: /docs
+        - generic [ref=f27e17]:
+          - link "Sign in" [ref=f27e18] [cursor=pointer]:
+            - /url: /sign-in
+          - link "Start free trial" [ref=f27e19] [cursor=pointer]:
+            - /url: /waitlist
+    - generic [ref=f27e21]:
+      - generic [ref=f27e22]:
+        - generic [ref=f27e23]: Built by
+        - generic [ref=f27e25]: AI agents
+      - heading "Work like a real team with AI agents" [level=1] [ref=f27e26]:
+        - generic [ref=f27e27]: Work like a real team with
+        - generic [ref=f27e29]:
+          - img [ref=f27e30]
+          - generic [ref=f27e33]: AI agents
+      - paragraph [ref=f27e34]: The Micro Agent Company helps individuals, creators, freelancers, and small businesses turn AI into a working team for content, admin, research, sales, support, and growth.
+      - generic [ref=f27e35]:
+        - link "Start free trial" [ref=f27e36] [cursor=pointer]:
+          - /url: "#agent-playroom"
+        - generic [ref=f27e37]: Small company. Smart agents. Real work done.
+    - generic [ref=f27e39]:
+      - generic [ref=f27e40]:
+        - heading "Built for real work" [level=3] [ref=f27e41]
+        - heading "A collaborative team structure for your business" [level=2] [ref=f27e42]
+        - paragraph [ref=f27e43]: Select a specialized functional department below to explore their workflows and active agent orchestrations.
+      - generic [ref=f27e44]:
+        - button "Content" [ref=f27e45] [cursor=pointer]:
+          - img [ref=f27e46]
+          - generic [ref=f27e49]: Content
+        - button "Admin" [ref=f27e50] [cursor=pointer]:
+          - img [ref=f27e51]
+          - generic [ref=f27e54]: Admin
+        - button "Research" [ref=f27e55] [cursor=pointer]:
+          - img [ref=f27e56]
+          - generic [ref=f27e64]: Research
+        - button "Sales" [ref=f27e65] [cursor=pointer]:
+          - img [ref=f27e66]
+          - generic [ref=f27e70]: Sales
+        - button "Support" [ref=f27e71] [cursor=pointer]:
+          - img [ref=f27e72]
+          - generic [ref=f27e74]: Support
+        - button "Growth" [ref=f27e75] [cursor=pointer]:
+          - img [ref=f27e76]
+          - generic [ref=f27e79]: Growth
+        - button "Automation" [ref=f27e80] [cursor=pointer]:
+          - img [ref=f27e81]
+          - generic [ref=f27e85]: Automation
+      - generic [ref=f27e87]:
+        - generic [ref=f27e88]:
+          - generic [ref=f27e89]: ACTIVE DEPARTMENT WORKFLOW
+          - heading "Optimizing Content with AI Agents" [level=4] [ref=f27e91]
+          - paragraph [ref=f27e92]: Design programmatic outlines, write high-authority blog drafts, automate SEO article creation, and design viral newsletters powered by Gemini's structured generation.
+        - generic [ref=f27e93]:
+          - generic [ref=f27e94]:
+            - generic [ref=f27e95]: POWERED BY
+            - generic [ref=f27e96]:
+              - img [ref=f27e98]
+              - generic [ref=f27e114]:
+                - text: Gemini
+                - generic [ref=f27e115]: AGENT NODE
+          - button "Activate Playroom console" [ref=f27e116] [cursor=pointer]:
+            - text: Activate Playroom console
+            - img [ref=f27e117]
+    - generic [ref=f27e120]:
+      - generic [ref=f27e121]:
+        - heading "Interactive Agent Playroom" [level=2] [ref=f27e122]
+        - paragraph [ref=f27e123]: Select an agent from the grid above to activate their console, edit their prompt, and see them execute real-world workflows in real time.
+      - generic [ref=f27e124]:
+        - generic [ref=f27e125]:
+          - generic [ref=f27e126]:
+            - img [ref=f27e128]
+            - generic [ref=f27e133]:
+              - heading "Ollama Agent" [level=4] [ref=f27e134]
+              - paragraph [ref=f27e135]: Ready & Active
+          - generic [ref=f27e137]: "MODEL: GEMINI-3.5-FLASH"
+        - generic [ref=f27e138]:
+          - paragraph [ref=f27e139]: Securely boot, customize, and run open weights local generative systems such as DeepSeek-R1 or Llama 3.
+          - generic [ref=f27e140]:
+            - generic [ref=f27e141]:
+              - generic [ref=f27e142]: Agent Instructions / Prompt
+              - textbox [ref=f27e143]: Design a local docker-compose configuration or shell instructions to pull and boot a deepseek-r1:1.5b model on an offline machine.
+            - generic [ref=f27e144]:
+              - button "Reset template prompt" [ref=f27e145]
+              - button "Execute Agent Workflow" [ref=f27e146] [cursor=pointer]:
+                - img [ref=f27e147]
+                - text: Execute Agent Workflow
+    - generic [ref=f27e150]:
+      - generic [ref=f27e151]:
+        - generic [ref=f27e152]:
+          - heading "Discovery" [level=2] [ref=f27e153]
+          - paragraph [ref=f27e154]: When AI answers a question, your product should be in the answer.
+        - generic [ref=f27e157]:
+          - text: 01001001 01000001
+          - text: 10110100 00101101
+          - text: 01100001 01100111
+          - text: 01100101 01101110
+      - generic [ref=f27e158]:
+        - generic [ref=f27e164]:
+          - generic [ref=f27e165]:
+            - heading "AI Search Discovery Tool" [level=4] [ref=f27e166]
+            - paragraph [ref=f27e167]: Analyze how conversational engines crawl and cite your company.
+          - generic [ref=f27e168]:
+            - generic [ref=f27e169]:
+              - generic [ref=f27e170]:
+                - generic [ref=f27e171]: Company Name
+                - textbox "e.g. Acme CRM" [ref=f27e172]
+              - generic [ref=f27e173]:
+                - generic [ref=f27e174]: Product Niche
+                - textbox "e.g. AI-powered CRM" [ref=f27e175]
+            - button "Generate AI Optimization Plan" [disabled] [ref=f27e176] [cursor=pointer]:
+              - img [ref=f27e177]
+              - text: Generate AI Optimization Plan
+          - generic [ref=f27e181]:
+            - heading "Top 5 AI-Powered CRM Tools in 2025 AI Citation Target" [level=4] [ref=f27e182]:
+              - text: Top 5 AI-Powered CRM Tools in 2025
+              - generic [ref=f27e183]: AI Citation Target
+            - generic [ref=f27e184]:
+              - paragraph [ref=f27e185]: Intro
+              - paragraph [ref=f27e186]: When businesses ask AI tools like ChatGPT, Claude, or Gemini "What's the best AI CRM for small businesses?" — the answers come from a handful of trusted sources.
+              - generic [ref=f27e187]: Best CRM Software 2025 report by G2
+              - generic [ref=f27e188]:
+                - paragraph [ref=f27e189]: We analyzed AI responses across platforms to find the most-cited CRM tools, why they stand out...
+                - generic [ref=f27e190]:
+                  - img [ref=f27e191]
+                  - text: Optimized CRM Index Setup
+        - generic [ref=f27e194]:
+          - generic [ref=f27e195]:
+            - generic [ref=f27e198]: "[ STEP 01 ]"
+            - heading "Find user questions" [level=4] [ref=f27e199]
+            - paragraph [ref=f27e200]: Find the exact conversational query lines your target demographic enters into generative chatbots.
+          - generic [ref=f27e201]:
+            - generic [ref=f27e204]: "[ STEP 02 ]"
+            - heading "Generate content" [level=4] [ref=f27e205]
+            - paragraph [ref=f27e206]: Develop reference content optimized for structural indexers to establish your product as the leading cited source.
+          - generic [ref=f27e207]:
+            - generic [ref=f27e210]: "[ STEP 03 ]"
+            - heading "Increase AI traffic & mentions" [level=4] [ref=f27e211]
+            - paragraph [ref=f27e212]: Synthesize incoming bot index patterns and verify active mentions directly in conversational output channels.
+    - generic [ref=f27e214]:
+      - generic [ref=f27e215]:
+        - heading "Frequently asked questions" [level=2] [ref=f27e216]:
+          - text: Frequently asked
+          - text: questions
+        - paragraph [ref=f27e217]: Get clear, technical answers to the most common questions about optimizing for AI agent discovery systems.
+      - generic [ref=f27e218]:
+        - generic [ref=f27e219]:
+          - button "What is agent experience?" [ref=f27e220]:
+            - generic [ref=f27e221]: What is agent experience?
+            - img [ref=f27e223]
+          - paragraph [ref=f27e226]: Agent Experience (AX) is the modern practice of modeling and optimizing your company's public content, verification reports, and digital indexes. It ensures that conversational LLM agents (ChatGPT, Claude, Gemini, Perplexity) easily retrieve, comprehend, and prioritize citing your brand when users ask recommended questions.
+        - generic [ref=f27e227]:
+          - button "Which AI agents and platforms do you support?" [ref=f27e228]:
+            - generic [ref=f27e229]: Which AI agents and platforms do you support?
+            - img [ref=f27e231]
+          - paragraph [ref=f27e233]: Our engine optimizes across all key conversational architectures including OpenAI's GPT models, Anthropic's Claude, Google's Gemini systems, Perplexity Search, and standard open-source framework models like Llama or Mistral.
+        - generic [ref=f27e234]:
+          - button "Can't I track this with my existing analytics?" [ref=f27e235]:
+            - generic [ref=f27e236]: Can't I track this with my existing analytics?
+            - img [ref=f27e238]
+          - paragraph [ref=f27e240]: Traditional web analytics (like Google Analytics) only track direct user traffic to your links. They cannot see what questions LLMs are answering behind closed doors, nor can they tell you how many times your product was considered but rejected in conversational searches. We uncover this hidden discovery layer.
+        - generic [ref=f27e241]:
+          - button "Do I need to change my product to get started?" [ref=f27e242]:
+            - generic [ref=f27e243]: Do I need to change my product to get started?
+            - img [ref=f27e245]
+          - paragraph [ref=f27e247]: No, you do not need to make changes to your codebase. All optimization is performed on public indexes, G2 files, community hubs, official docs, and reference articles where AI spiders crawl and build their knowledge base.
+        - generic [ref=f27e248]:
+          - button "How quickly will I see results?" [ref=f27e249]:
+            - generic [ref=f27e250]: How quickly will I see results?
+            - img [ref=f27e252]
+          - paragraph [ref=f27e254]: AI models crawl the web dynamically and rebuild weights regularly. Typically, once custom optimization strategies and content seeding are implemented, you will see a measurable change in LLM recommendation mentions within 1 to 2 weeks.
+        - generic [ref=f27e255]:
+          - button "How is this different from SEO?" [ref=f27e256]:
+            - generic [ref=f27e257]: How is this different from SEO?
+            - img [ref=f27e259]
+          - paragraph [ref=f27e261]: Whereas SEO focuses on securing a high link hierarchy on Page 1 of Search result lists, Agent Discovery focuses on semantic relevance. It aims to make your brand the definitive, conversational text recommendation that the AI model answers directly in its synthesis.
+    - contentinfo [ref=f27e262]:
+      - generic [ref=f27e263]:
+        - generic [ref=f27e264]:
+          - heading "Get discovered & used by" [level=2] [ref=f27e265]
+          - paragraph [ref=f27e266]: AI Agents
+          - paragraph [ref=f27e267]: You optimized for user experience. Now optimize for AGENT EXPERIENCE.
+          - link "Start free trial" [ref=f27e268] [cursor=pointer]:
+            - /url: /waitlist
+        - generic [ref=f27e269]:
+          - generic [ref=f27e270]:
+            - generic [ref=f27e271]:
+              - generic [ref=f27e272]: the
+              - generic [ref=f27e273]:
+                - text: Micro Agent
+                - text: Company
+            - paragraph [ref=f27e274]: You optimized for user experience. Now optimize for AGENT EXPERIENCE.
+          - generic [ref=f27e275]:
+            - generic [ref=f27e276]:
+              - generic [ref=f27e277]: Company
+              - link "Pricing" [ref=f27e278] [cursor=pointer]:
+                - /url: /pricing
+              - link "Enterprise" [ref=f27e279] [cursor=pointer]:
+                - /url: "#built-for"
+              - link "Trust center" [ref=f27e280] [cursor=pointer]:
+                - /url: "#discovery"
+              - link "Competitor analysis" [ref=f27e281] [cursor=pointer]:
+                - /url: "#built-for"
+              - link "Documentation" [ref=f27e282] [cursor=pointer]:
+                - /url: /docs
+              - link "Careers" [ref=f27e283] [cursor=pointer]:
+                - /url: "#hero"
+            - generic [ref=f27e284]:
+              - generic [ref=f27e285]: Contact
+              - link "LinkedIn" [ref=f27e286] [cursor=pointer]:
+                - /url: "#"
+              - link "X / Twitter" [ref=f27e287] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f27e288]:
+              - generic [ref=f27e289]: Legal
+              - link "Privacy policy" [ref=f27e290] [cursor=pointer]:
+                - /url: "#"
+              - link "Terms of use" [ref=f27e291] [cursor=pointer]:
+                - /url: "#"
+        - paragraph [ref=f27e293]: © 2026 The Micro Agent Company, Inc.
+  - alert [ref=f27e294]

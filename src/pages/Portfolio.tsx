@@ -118,7 +118,7 @@ const portfolioItems = [
     title: "Lumora",
     category: "landing",
     desc: "Cinematic hero section untuk mindfulness app dengan video slides, liquid glass UI, dan video switcher.",
-    image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=600&h=400",
+    image: "/previews/lumora.png",
     link: "/lumora",
     icon: Rocket,
   },

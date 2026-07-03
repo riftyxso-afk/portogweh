@@ -138,6 +138,14 @@ const portfolioItems = [
     link: "/prmpt",
     icon: Rocket,
   },
+  {
+    title: "NusaStay",
+    category: "platform",
+    desc: "Platform booking villa & akomodasi di Bali. Traveloka-inspired design, 14 routes, admin dashboard dengan recharts, PWA-ready. Next.js + shadcn/ui + Zustand.",
+    image: "/previews/nusastay.png",
+    link: "https://nusa-stay.vercel.app",
+    icon: Building2,
+  },
 ];
 
 const categories = ["all", "aiApp", "company", "landing", "platform"] as const;

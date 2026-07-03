@@ -1,0 +1,40 @@
+- generic [ref=f12e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f12e6]:
+    - navigation [ref=f12e7]:
+      - generic [ref=f12e8]:
+        - generic [ref=f12e9]: Atelier
+        - generic [ref=f12e10]:
+          - link "Projects" [ref=f12e11] [cursor=pointer]:
+            - /url: "#"
+          - link "Expertise" [ref=f12e12] [cursor=pointer]:
+            - /url: "#"
+          - link "Studio" [ref=f12e13] [cursor=pointer]:
+            - /url: "#"
+          - link "Insights" [ref=f12e14] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=f12e15]:
+        - link "Reach Out" [ref=f12e16] [cursor=pointer]:
+          - /url: "#"
+        - link "Let's Talk" [ref=f12e17] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=f12e18]:
+      - heading "UX and APP DESIGN for BOLD VENTURES" [level=1] [ref=f12e19]:
+        - text: UX and APP
+        - text: DESIGN for BOLD
+        - text: VENTURES
+      - paragraph [ref=f12e20]:
+        - text: We shape digital products that define brands
+        - text: and unlock exponential growth.
+      - generic [ref=f12e21]:
+        - link "See Cases" [ref=f12e22] [cursor=pointer]:
+          - /url: "#"
+          - text: See Cases
+          - img [ref=f12e23]
+        - link "Watch Reel" [ref=f12e25] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=f12e26]
+          - text: Watch Reel
+    - generic [ref=f12e28]: RADZZZ

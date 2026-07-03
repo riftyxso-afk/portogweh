@@ -11,6 +11,7 @@ import Projects from "./pages/Projects.tsx";
 import Portfolio from "./pages/Portfolio.tsx";
 import Atelier from "./pages/Atelier.tsx";
 import CozyPaws from "./pages/CozyPaws.tsx";
+import Lumora from "./pages/Lumora.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Guestbook from "./pages/Guestbook.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -31,6 +32,7 @@ const AnimatedRoutes = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/atelier" element={<Atelier />} />
         <Route path="/cozypaws" element={<CozyPaws />} />
+        <Route path="/lumora" element={<Lumora />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/notes" element={<Guestbook />} />
         <Route path="*" element={<NotFound />} />

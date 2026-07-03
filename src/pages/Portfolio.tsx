@@ -126,7 +126,7 @@ const portfolioItems = [
     title: "TerraElix",
     category: "landing",
     desc: "Wellness brand hero dengan background image, word-by-word reveal, carousel panel, dan floating product.",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600&h=400",
+    image: "/previews/terra-elix.png",
     link: "/terra-elix",
     icon: Rocket,
   },

@@ -106,6 +106,14 @@ const portfolioItems = [
     link: "/atelier",
     icon: Rocket,
   },
+  {
+    title: "CozyPaws",
+    category: "landing",
+    desc: "Pet store hero section dengan desain fresh, animasi word-pop, dan layout 3 panel foto produk.",
+    image: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=80&w=600&h=400",
+    link: "/cozypaws",
+    icon: Rocket,
+  },
 ];
 
 const categories = ["all", "aiApp", "company", "landing", "platform"] as const;

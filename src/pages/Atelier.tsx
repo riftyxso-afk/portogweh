@@ -113,6 +113,11 @@ const Atelier = () => {
             </a>
           </div>
         </div>
+
+        {/* RADZZZ Watermark */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-white/20 text-xs font-mono tracking-[0.2em] uppercase select-none">
+          RADZZZ
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}

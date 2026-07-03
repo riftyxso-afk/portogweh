@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ExternalLink, Globe, Monitor, Smartphone, Layout, Bot, Sparkles, Building2, Rocket, Cpu } from "lucide-react";
+import { ExternalLink, Globe, Monitor, Bot, Sparkles, Building2, Rocket, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
@@ -75,14 +75,6 @@ const portfolioItems = [
     icon: Globe,
   },
   {
-    title: "Ravora",
-    category: "platform",
-    desc: "Platform web modern cepat dan interaktif untuk manajemen konten.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600&h=400",
-    link: "https://ravora.vercel.app/",
-    icon: Layout,
-  },
-  {
     title: "Monitoring Tanah",
     category: "platform",
     desc: "Sistem monitoring kelembaban tanah otomatis berbasis IoT.",
@@ -128,6 +120,14 @@ const portfolioItems = [
     desc: "Design agency hero dengan shader background animated, pill navbar, dan case studies video cards.",
     image: "/previews/axion-studio.png",
     link: "/axion",
+    icon: Rocket,
+  },
+  {
+    title: "Securify",
+    category: "landing",
+    desc: "Data-security SaaS hero dengan video background, floating pill navbar, dan staggered typography.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600&h=400",
+    link: "/securify",
     icon: Rocket,
   },
 ];

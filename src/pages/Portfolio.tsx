@@ -75,14 +75,6 @@ const portfolioItems = [
     icon: Globe,
   },
   {
-    title: "Noir Dev",
-    category: "company",
-    desc: "Layanan pengembangan web profesional dengan desain minimalis.",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=600&h=400",
-    link: "https://www.noir-code.biz.id/",
-    icon: Building2,
-  },
-  {
     title: "Ravora",
     category: "platform",
     desc: "Platform web modern cepat dan interaktif untuk manajemen konten.",
@@ -128,6 +120,14 @@ const portfolioItems = [
     desc: "Wellness brand hero dengan background image, word-by-word reveal, carousel panel, dan floating product.",
     image: "/previews/terra-elix.png",
     link: "/terra-elix",
+    icon: Rocket,
+  },
+  {
+    title: "Axion Studio",
+    category: "landing",
+    desc: "Design agency hero dengan shader background animated, pill navbar, dan case studies video cards.",
+    image: "https://images.unsplash.com/photo-1617195737480-b76d0c5a1b8b?auto=format&fit=crop&q=80&w=600&h=400",
+    link: "/axion",
     icon: Rocket,
   },
 ];

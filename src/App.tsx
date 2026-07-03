@@ -13,6 +13,7 @@ import Atelier from "./pages/Atelier.tsx";
 import CozyPaws from "./pages/CozyPaws.tsx";
 import Lumora from "./pages/Lumora.tsx";
 import TerraElix from "./pages/TerraElix.tsx";
+import AxionStudio from "./pages/AxionStudio.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Guestbook from "./pages/Guestbook.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -35,6 +36,7 @@ const AnimatedRoutes = () => {
         <Route path="/cozypaws" element={<CozyPaws />} />
         <Route path="/lumora" element={<Lumora />} />
         <Route path="/terra-elix" element={<TerraElix />} />
+        <Route path="/axion" element={<AxionStudio />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/notes" element={<Guestbook />} />
         <Route path="*" element={<NotFound />} />

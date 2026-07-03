@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Clock, Menu, X } from "lucide-react";
-import { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from "shaders/react";
+import { Swirl, ChromaFlow, FlutedGlass, FilmGrain, Shader } from "shaders/react";
 
 const starburstIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5 sm:w-6 sm:h-6 fill-current text-[#E8704E]">
@@ -47,20 +47,11 @@ function LondonTime() {
 
 const AxionStudio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
 
   useEffect(() => {
     if (menuOpen) { document.body.style.overflow = "hidden"; } else { document.body.style.overflow = ""; }
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -68,10 +59,12 @@ const AxionStudio = () => {
       <section className="relative w-full h-screen overflow-hidden" style={{ backgroundColor: "#EFEFEF" }}>
         {/* Shader Background */}
         <div className="absolute inset-0 z-10 pointer-events-none">
-          <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
-          <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
-          <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
-          <FilmGrain strength={0.05} />
+          <Shader>
+            <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
+            <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
+            <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
+            <FilmGrain strength={0.05} />
+          </Shader>
         </div>
 
         {/* Navigation */}

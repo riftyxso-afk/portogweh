@@ -1,0 +1,50 @@
+- generic [ref=f2e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f2e3]:
+    - link "Home" [ref=f2e6] [cursor=pointer]:
+      - /url: /
+    - button "Open menu" [ref=f2e9] [cursor=pointer]
+    - generic:
+      - navigation:
+        - link "Work":
+          - /url: /
+        - link "About":
+          - /url: /education
+        - link "Blog":
+          - /url: /projects
+      - generic:
+        - link "studio@norakessler.com":
+          - /url: mailto:studio@norakessler.com
+        - generic:
+          - link "Pinterest":
+            - /url: "#"
+          - link "Behance":
+            - /url: "#"
+          - link "Letterboxd":
+            - /url: "#"
+      - generic:
+        - button "Let's talk":
+          - generic: Let's talk
+          - generic:
+            - img
+    - main [ref=f2e12]:
+      - generic:
+        - heading "Visuals" [level=2]
+      - generic [ref=f2e14]:
+        - heading "I build compelling visual stories & motion that make ideas shine." [level=1] [ref=f2e15]:
+          - generic [ref=f2e16]: I
+          - generic [ref=f2e17]: build
+          - generic [ref=f2e18]: compelling
+          - generic [ref=f2e19]: visual
+          - generic [ref=f2e20]: stories
+          - generic [ref=f2e21]: "&"
+          - generic [ref=f2e22]: motion
+          - generic [ref=f2e23]: that
+          - generic [ref=f2e24]: make
+          - generic [ref=f2e25]: ideas
+          - generic [ref=f2e26]: shine.
+        - button "Start a project now" [ref=f2e27] [cursor=pointer]:
+          - generic [ref=f2e29]: Start a project now
+          - img [ref=f2e31]

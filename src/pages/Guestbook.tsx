@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { Search, Sun, Moon, MessageSquare, Send, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MessageSquare, Send, User, Clock } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { format } from "date-fns";
+import { motion } from "framer-motion";
 
 const translations = {
   id: {
     home: "Beranda",
     education: "Pendidikan",
     projects: "Proyek",
+    portfolio: "Portofolio",
     gallery: "Galeri",
     notes: "Catatan",
     more: "Lainnya",
@@ -29,6 +30,7 @@ const translations = {
     home: "Home",
     education: "Education",
     projects: "Projects",
+    portfolio: "Portfolio",
     gallery: "Gallery",
     notes: "Notes",
     more: "More",
@@ -59,7 +61,7 @@ const Guestbook = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [newName, setNewName] = useState("");
   const [newMessage, setNewMessage] = useState("");
-  
+
   const { toast } = useToast();
 
   useEffect(() => {
@@ -113,28 +115,62 @@ const Guestbook = () => {
     }
   };
 
+  const getAvatarColor = (name: string) => {
+    const colors = [
+      "from-[#2563EB] to-[#7C3AED]",
+      "from-[#059669] to-[#10B981]",
+      "from-[#D97706] to-[#F59E0B]",
+      "from-[#DC2626] to-[#EF4444]",
+      "from-[#0891B2] to-[#06B6D4]",
+      "from-[#7C3AED] to-[#EC4899]",
+    ];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return colors[Math.abs(hash) % colors.length];
+  };
+
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
   return (
     <PageTransition>
-      <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
-        <div className="mx-auto max-w-[900px] bg-card shadow-paper relative overflow-hidden rounded-sm z-10">
-          
+      <div className="min-h-screen w-full relative py-8 md:py-12 px-4 md:px-8 bg-[#F8F9FA] dark:bg-[#0A0A0B] transition-colors duration-300 overflow-hidden">
+      <div
+        className="absolute inset-0 z-0 opacity-[0.15] dark:opacity-[0.2] pointer-events-none"
+        style={{
+          backgroundImage: `url('/bg.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+        <div className="mx-auto max-w-[1000px] bg-white dark:bg-[#111113] shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.3)] relative overflow-hidden rounded-2xl z-10 border border-[#E8E8EC] dark:border-[#1F1F23]">
+
           <Header t={t} isDark={isDark} setIsDark={setIsDark} />
 
-          <div className="h-8 diagonal-pattern border-b border-border"></div>
-
-          <div className="px-8 md:px-6 md:px-12 py-8 md:py-10">
-            <div className="flex items-center gap-3 mb-2">
-              <MessageSquare className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl font-display font-medium text-foreground">{t.guestbookTitle}</h2>
-            </div>
-            <p className="text-muted-foreground mb-10">{t.guestbookDesc}</p>
+          <div className="px-8 md:px-14 py-10 md:py-14">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <h2 className="text-xs font-semibold tracking-[0.15em] uppercase text-[#6B7280] dark:text-[#9CA3AF] mb-2 flex items-center gap-3">
+                <MessageSquare className="w-4 h-4" />
+                {t.guestbookTitle}
+              </h2>
+              <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-8">{t.guestbookDesc}</p>
+            </motion.div>
 
             {/* Message Form */}
-            <form onSubmit={handleSubmit} className="bg-secondary/20 p-6 rounded-2xl border border-border/50 mb-12">
+            <motion.form
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              onSubmit={handleSubmit}
+              className="mb-12 p-6 rounded-xl border border-[#E5E7EB] dark:border-[#27272A] bg-[#F8F9FA] dark:bg-[#18181B]"
+            >
               <div className="space-y-4">
                 <div>
                   <input
@@ -142,7 +178,7 @@ const Guestbook = () => {
                     placeholder={t.namePlaceholder}
                     value={newName}
                     onChange={(e) => setNewName(e.target.value)}
-                    className="w-full bg-background border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full bg-white dark:bg-[#111113] border border-[#E5E7EB] dark:border-[#27272A] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#111] dark:text-[#F4F4F5] placeholder:text-[#9CA3AF] transition-shadow"
                     required
                   />
                 </div>
@@ -151,47 +187,71 @@ const Guestbook = () => {
                     placeholder={t.messagePlaceholder}
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
-                    className="w-full bg-background border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary h-24 resize-none"
+                    className="w-full bg-white dark:bg-[#111113] border border-[#E5E7EB] dark:border-[#27272A] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#111] dark:text-[#F4F4F5] placeholder:text-[#9CA3AF] h-24 resize-none transition-shadow"
                     required
                   />
                 </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-all flex items-center gap-2 disabled:opacity-50"
-                >
-                  <Send className="w-4 h-4" />
-                  {isSubmitting ? t.loading : t.submit}
-                </button>
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center gap-2 bg-[#111111] dark:bg-white text-white dark:text-[#111111] px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-[#2a2a2a] dark:hover:bg-[#E4E4E7] transition-all disabled:opacity-50 shadow-sm"
+                  >
+                    <Send className="w-4 h-4" />
+                    {isSubmitting ? t.loading : t.submit}
+                  </button>
+                </div>
               </div>
-            </form>
+            </motion.form>
 
             {/* Messages List */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {isLoading ? (
-                <p className="text-center text-muted-foreground">{t.loading}</p>
+                <div className="flex items-center justify-center py-16">
+                  <div className="w-6 h-6 border-2 border-[#2563EB] border-t-transparent rounded-full animate-spin" />
+                </div>
               ) : messages.length === 0 ? (
-                <p className="text-center text-muted-foreground">{t.noMessages}</p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF] py-16"
+                >
+                  {t.noMessages}
+                </motion.p>
               ) : (
-                messages.map((msg) => (
-                  <div key={msg.id} className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-border">
-                    <div className="flex items-center gap-2 mb-1">
-                      <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center">
-                        <User className="w-3 h-3 text-muted-foreground" />
+                messages.map((msg, index) => (
+                  <motion.div
+                    key={msg.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.04, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="group rounded-xl border border-[#E5E7EB] dark:border-[#27272A] bg-[#F8F9FA] dark:bg-[#18181B] p-4 hover:border-[#D1D5DB] dark:hover:border-[#3F3F46] hover:shadow-sm transition-all duration-200"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${getAvatarColor(msg.name)} flex items-center justify-center shrink-0 shadow-sm`}>
+                        <User className="w-4 h-4 text-white" />
                       </div>
-                      <span className="font-medium text-sm text-foreground">{msg.name}</span>
-                      <span className="text-[10px] text-muted-foreground">
-                        {format(new Date(msg.created_at), "MMM d, yyyy")}
-                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2.5 mb-0.5">
+                          <span className="text-sm font-semibold text-[#111111] dark:text-[#F4F4F5]">
+                            {msg.name}
+                          </span>
+                          <span className="flex items-center gap-1 text-[10px] text-[#9CA3AF] dark:text-[#6B7280]">
+                            <Clock className="w-2.5 h-2.5" />
+                            {format(new Date(msg.created_at), "MMM d, yyyy")}
+                          </span>
+                        </div>
+                        <p className="text-sm text-[#4B5563] dark:text-[#A1A1AA] leading-relaxed">
+                          {msg.message}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed bg-secondary/10 p-3 rounded-lg border border-border/30">
-                      {msg.message}
-                    </p>
-                  </div>
+                  </motion.div>
                 ))
               )}
             </div>
           </div>
+
         </div>
       </div>
     </PageTransition>

@@ -1,0 +1,141 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - button "MicroAgent home" [ref=e6] [cursor=pointer]:
+        - img [ref=e8]
+      - navigation [ref=e12]:
+        - button "New" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+          - generic [ref=e15]: New
+        - button "History" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+          - generic [ref=e22]: History
+        - button "Projects" [ref=e23] [cursor=pointer]:
+          - img [ref=e24]
+          - generic [ref=e26]: Projects
+        - button "Images" [ref=e27] [cursor=pointer]:
+          - img [ref=e28]
+          - generic [ref=e32]: Images
+        - button "More" [ref=e33] [cursor=pointer]:
+          - img [ref=e34]
+          - generic [ref=e38]: More
+      - button "Collapse sidebar" [ref=e40] [cursor=pointer]:
+        - img [ref=e41]
+    - banner [ref=e44]:
+      - button "Account menu — Guest" [ref=e45] [cursor=pointer]: G
+    - main [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: MicroAgent CLI
+            - paragraph [ref=e54]: AI coding assistant langsung di terminal kamu. Coding, debug, manage files — semua via natural language.
+          - generic [ref=e55]:
+            - button "Install" [ref=e56] [cursor=pointer]:
+              - text: Install
+              - img [ref=e57]
+            - button "Dismiss" [ref=e61] [cursor=pointer]:
+              - img [ref=e62]
+        - generic [ref=e65]:
+          - generic [ref=e67]:
+            - text: Guest
+            - button "Sign in" [ref=e70] [cursor=pointer]
+          - heading "Good morning" [level=1] [ref=e71]
+          - paragraph [ref=e72]: Ready to create something today?
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - generic [ref=e77]: "10"
+              - generic [ref=e78]: Guest mode · 10 of 10 prompts left
+            - link "Sign in" [ref=e79] [cursor=pointer]:
+              - /url: /auth
+          - generic [ref=e80]:
+            - textbox "Ask anything" [ref=e81]
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - button "Tools" [ref=e85] [cursor=pointer]:
+                  - img [ref=e86]
+                - button "Supercomputer — Pro feature" [ref=e90] [cursor=pointer]:
+                  - img [ref=e91]
+                - button "Attach files" [ref=e94] [cursor=pointer]:
+                  - img [ref=e95]
+              - generic [ref=e97]:
+                - 'button "Active model: DeepSeek v4 Flash" [ref=e99] [cursor=pointer]':
+                  - img [ref=e101]
+                  - generic [ref=e102]: DeepSeek v4 Flash
+                  - generic [ref=e103]:
+                    - img [ref=e104]
+                    - text: "1"
+                  - generic [ref=e106]:
+                    - img [ref=e107]
+                    - text: Low
+                  - img [ref=e110]
+                - button "Improve prompt with AI" [ref=e112] [cursor=pointer]:
+                  - img [ref=e113]
+                  - generic [ref=e115]: Improve
+                - button "Send message" [disabled] [ref=e116]:
+                  - img [ref=e117]
+        - generic [ref=e121]:
+          - button "Research" [ref=e122] [cursor=pointer]:
+            - img [ref=e123]
+            - text: Research
+          - button "Create" [ref=e126] [cursor=pointer]:
+            - img [ref=e127]
+            - text: Create
+          - button "Analyse" [ref=e129] [cursor=pointer]:
+            - img [ref=e130]
+            - text: Analyse
+          - button "Imagine" [ref=e132] [cursor=pointer]:
+            - img [ref=e133]
+            - text: Imagine
+          - button "Solve" [ref=e139] [cursor=pointer]:
+            - img [ref=e140]
+            - text: Solve
+        - generic [ref=e144]:
+          - button "GoalMind Piala Dunia 2026 • AI Insights Loading" [ref=e145] [cursor=pointer]:
+            - img [ref=e147]
+            - generic [ref=e153]:
+              - heading "GoalMind" [level=3] [ref=e154]
+              - paragraph [ref=e155]: Piala Dunia 2026 • AI Insights
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - img [ref=e158]
+                - generic [ref=e163]: Loading
+              - button "Refresh data" [disabled] [ref=e164]:
+                - img [ref=e165]
+              - img [ref=e170]
+          - generic [ref=e177]: Live Now
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - img [ref=e197]
+              - generic [ref=e199]: Quick Actions
+            - generic [ref=e200]:
+              - button [ref=e201] [cursor=pointer]:
+                - img [ref=e202]
+                - text: Skor Terkini
+              - button [ref=e204] [cursor=pointer]:
+                - img [ref=e205]
+                - text: Prediksi Hari Ini
+              - button [ref=e215] [cursor=pointer]:
+                - img [ref=e216]
+                - text: Jadwal
+              - button [ref=e218] [cursor=pointer]:
+                - img [ref=e219]
+                - text: Klasemen Grup
+              - button [ref=e221] [cursor=pointer]:
+                - img [ref=e222]
+                - text: Tanya AI
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - img [ref=e227]
+                - generic [ref=e230]: Prediksi Cepat
+              - generic [ref=e232]: 🇦🇷 Argentina vs 🇲🇦 Maroko
+              - generic [ref=e237]:
+                - generic [ref=e238]: ARG 55%
+                - generic [ref=e239]: SERI 25%
+                - generic [ref=e240]: MAR 20%
+          - generic [ref=e242]:
+            - img [ref=e243]
+            - generic [ref=e246]: Headline
+        - button "Sign in for full access" [ref=e251] [cursor=pointer]
+  - region "Notifications alt+T"

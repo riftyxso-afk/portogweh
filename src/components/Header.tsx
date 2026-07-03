@@ -41,6 +41,7 @@ export function Header({ t, isDark, setIsDark }: HeaderProps) {
           <Link to="/" className={getLinkClass("/")}>{t.home}</Link>
           <Link to="/education" className={getLinkClass("/education")}>{t.education}</Link>
           <Link to="/projects" className={getLinkClass("/projects")}>{t.projects}</Link>
+          <Link to="/portfolio" className={getLinkClass("/portfolio")}>{t.portfolio}</Link>
           <Link to="/gallery" className={getLinkClass("/gallery")}>{t.gallery}</Link>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
@@ -60,7 +61,7 @@ export function Header({ t, isDark, setIsDark }: HeaderProps) {
                 <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <a href="/CV_I-Wayan-Radea.docx" download="CV_I-Wayan-Radea.docx">{t.downloadCV || "Download CV"}</a>
+                <a href="/I_Wayan_Radea_CV_ID.docx" download="I_Wayan_Radea_CV_ID.docx">{t.downloadCV || "Download CV"}</a>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

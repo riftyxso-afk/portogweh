@@ -210,6 +210,15 @@ const Portfolio = () => {
               })}
             </div>
 
+            {/* Disclaimer */}
+            <div className="mb-8 px-4 py-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50">
+              <p className="text-xs text-amber-800 dark:text-amber-300 leading-relaxed">
+                <span lang="id">Ini hanyalah demo untuk menunjukkan kemampuan teknis. Saya dapat membangun landing page yang lebih kompleks, fungsional, dan sesuai kebutuhan spesifik Anda.</span>
+                <br />
+                <span lang="en" className="text-amber-700 dark:text-amber-400">This is only a demo showcasing technical capability. I can build more complex, functional landing pages tailored to your specific needs.</span>
+              </p>
+            </div>
+
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {filtered.map((item, i) => {

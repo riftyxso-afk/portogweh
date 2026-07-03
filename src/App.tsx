@@ -15,6 +15,7 @@ import SereneMind from "./pages/SereneMind.tsx";
 import VitaNatura from "./pages/VitaNatura.tsx";
 import DesignLab from "./pages/DesignLab.tsx";
 import CyberGuard from "./pages/CyberGuard.tsx";
+import Prmpt from "./pages/Prmpt.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Guestbook from "./pages/Guestbook.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -39,6 +40,7 @@ const AnimatedRoutes = () => {
         <Route path="/vita-natura" element={<VitaNatura />} />
         <Route path="/design-lab" element={<DesignLab />} />
         <Route path="/cyber-guard" element={<CyberGuard />} />
+        <Route path="/prmpt" element={<Prmpt />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/notes" element={<Guestbook />} />
         <Route path="*" element={<NotFound />} />

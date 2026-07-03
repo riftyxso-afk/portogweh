@@ -130,6 +130,14 @@ const portfolioItems = [
     link: "/cyber-guard",
     icon: Rocket,
   },
+  {
+    title: "prmpt",
+    category: "landing",
+    desc: "Scroll-driven fashion archive landing page dengan GSAP video scrub, RAF gallery cards, dan mix-blend-mode overlay UI.",
+    image: "/previews/prmpt.png",
+    link: "/prmpt",
+    icon: Rocket,
+  },
 ];
 
 const categories = ["all", "aiApp", "company", "landing", "platform"] as const;

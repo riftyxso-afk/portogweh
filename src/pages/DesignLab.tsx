@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Clock, Menu, X } from "lucide-react";
+import { ArrowRight, Clock, Menu, X, BarChart3, Palette, Sparkles, Code } from "lucide-react";
 import { Swirl, ChromaFlow, FlutedGlass, FilmGrain, Shader } from "shaders/react";
+import { toast } from "sonner";
 
 const starburstIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5 sm:w-6 sm:h-6 fill-current text-[#E8704E]">
@@ -45,13 +46,65 @@ function LondonTime() {
   return <>{time}</>;
 }
 
-const AxionStudio = () => {
+const DesignLab = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    company: "",
+    projectType: "",
+    budgetRange: "",
+    projectDescription: ""
+  });
+  const [submissions, setSubmissions] = useState<any[]>([]);
 
   useEffect(() => {
     if (menuOpen) { document.body.style.overflow = "hidden"; } else { document.body.style.overflow = ""; }
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("designlab_contacts");
+    if (saved) setSubmissions(JSON.parse(saved));
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newSubmission = { ...formData, id: Date.now(), timestamp: new Date().toISOString() };
+    const updated = [...submissions, newSubmission];
+    localStorage.setItem("designlab_contacts", JSON.stringify(updated));
+    setSubmissions(updated);
+    toast.success("Project inquiry submitted! We'll be in touch soon.");
+    setFormData({ fullName: "", email: "", company: "", projectType: "", budgetRange: "", projectDescription: "" });
+  };
+
+  const services = [
+    {
+      icon: <BarChart3 className="w-7 h-7" />,
+      title: "Digital Strategy",
+      description: "Data-driven strategies that align with your business goals"
+    },
+    {
+      icon: <Palette className="w-7 h-7" />,
+      title: "UI/UX Design",
+      description: "User-centered interfaces that drive engagement and conversions"
+    },
+    {
+      icon: <Sparkles className="w-7 h-7" />,
+      title: "Brand Identity",
+      description: "Distinctive brand systems that make you memorable"
+    },
+    {
+      icon: <Code className="w-7 h-7" />,
+      title: "Development",
+      description: "Clean, scalable code that brings designs to life"
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -73,7 +126,7 @@ const AxionStudio = () => {
             {/* Left */}
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
               <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-full flex items-center justify-center">
-                <span className="text-white text-[10px] sm:text-[11px] font-bold tracking-tight">AX</span>
+                <span className="text-white text-[10px] sm:text-[11px] font-bold tracking-tight">DL</span>
               </div>
               <div className="hidden md:flex items-center gap-6">
                 {["Projects", "Studio", "Journal", "Connect"].map((link) => (
@@ -126,7 +179,7 @@ const AxionStudio = () => {
         <div className="relative z-20 flex flex-col h-full">
           <div className="flex-1" />
           <div className="max-w-[1440px] mx-auto w-full px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
-            <p className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8">Axion Studio</p>
+            <p className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8">DesignLab</p>
 
             <h1 className="font-medium leading-[1.08] tracking-[-0.03em] text-gray-900"
               style={{ fontSize: "clamp(1.75rem,7vw,4.2rem)" }}>
@@ -155,7 +208,7 @@ const AxionStudio = () => {
         <div className="max-w-[1440px] mx-auto">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white flex items-center justify-center text-[11px] sm:text-[12px] font-semibold">1</div>
-            <span className="text-[12px] sm:text-[13px] font-medium border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">Introducing Axion</span>
+            <span className="text-[12px] sm:text-[13px] font-medium border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">Introducing DesignLab</span>
           </div>
 
           <h2 className="px-5 sm:px-8 lg:px-12 font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28"
@@ -249,8 +302,130 @@ const AxionStudio = () => {
           </div>
         </div>
       </section>
+
+      {/* SECTION 4: CONTACT / INQUIRY FORM */}
+      <section className="bg-white pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="flex items-center gap-3 mb-6 sm:mb-8">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white flex items-center justify-center text-[11px] sm:text-[12px] font-semibold">3</div>
+            <span className="text-[12px] sm:text-[13px] font-medium border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">Get in touch</span>
+          </div>
+
+          <div className="flex items-baseline gap-4 sm:gap-6 mb-10 sm:mb-14">
+            <h2 className="font-medium leading-[1.12] tracking-[-0.02em] text-gray-900"
+              style={{ fontSize: "clamp(1.5rem,4vw,3.2rem)" }}>
+              Start a Project
+            </h2>
+            <span className="text-[15px] sm:text-[17px] text-gray-400 hidden sm:inline">/ Mulai Proyek</span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Full Name</label>
+                <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50" />
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Email</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50" />
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Company</label>
+                <input type="text" name="company" value={formData.company} onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50" />
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Project Type</label>
+                <select name="projectType" value={formData.projectType} onChange={handleChange} required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50">
+                  <option value="">Select a type</option>
+                  <option value="Web Design">Web Design</option>
+                  <option value="App Design">App Design</option>
+                  <option value="Brand Identity">Brand Identity</option>
+                  <option value="UX Research">UX Research</option>
+                  <option value="Full Stack">Full Stack</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Budget Range</label>
+                <select name="budgetRange" value={formData.budgetRange} onChange={handleChange} required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50">
+                  <option value="">Select a range</option>
+                  <option value="Under $10k">Under $10k</option>
+                  <option value="$10k - $25k">$10k - $25k</option>
+                  <option value="$25k - $50k">$25k - $50k</option>
+                  <option value="$50k - $100k">$50k - $100k</option>
+                  <option value="$100k+">$100k+</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Project Description</label>
+                <textarea name="projectDescription" value={formData.projectDescription} onChange={handleChange} required rows={4}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] outline-none transition-colors focus:border-[#F26522] bg-gray-50 resize-y" />
+              </div>
+              <button type="submit"
+                className="w-full bg-[#F26522] text-white rounded-full py-3 text-[14px] font-medium hover:bg-[#e05a1a] transition-colors">
+                Submit Inquiry
+              </button>
+            </form>
+
+            <div>
+              <h3 className="text-[15px] font-semibold text-gray-900 mb-4">Recent Submissions</h3>
+              {submissions.length === 0 ? (
+                <p className="text-[14px] text-gray-400">No submissions yet. Be the first!</p>
+              ) : (
+                <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2">
+                  {[...submissions].reverse().map((s) => (
+                    <div key={s.id} className="border border-gray-100 rounded-xl p-4 bg-gray-50">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[14px] font-medium text-gray-900">{s.fullName}</span>
+                        <span className="text-[11px] text-gray-400">{new Date(s.timestamp).toLocaleDateString()}</span>
+                      </div>
+                      <p className="text-[13px] text-gray-600">{s.email} {s.company ? `· ${s.company}` : ""}</p>
+                      <div className="flex gap-2 mt-2">
+                        <span className="text-[11px] bg-white border border-gray-200 rounded-full px-2.5 py-0.5 text-gray-600">{s.projectType}</span>
+                        <span className="text-[11px] bg-white border border-gray-200 rounded-full px-2.5 py-0.5 text-gray-600">{s.budgetRange}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: SERVICES SUMMARY */}
+      <section className="bg-[#F5F5F5] pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="flex items-center gap-3 mb-6 sm:mb-8">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white flex items-center justify-center text-[11px] sm:text-[12px] font-semibold">4</div>
+            <span className="text-[12px] sm:text-[13px] font-medium border border-gray-300 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">What we do</span>
+          </div>
+
+          <h2 className="font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-10 sm:mb-14 lg:mb-16"
+            style={{ fontSize: "clamp(1.5rem,4vw,3.2rem)" }}>
+            Services
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 lg:gap-7">
+            {services.map((service, i) => (
+              <div key={i}
+                className="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-[#F26522]/10 text-[#F26522] flex items-center justify-center mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-[16px] sm:text-[18px] font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default AxionStudio;
+export default DesignLab;

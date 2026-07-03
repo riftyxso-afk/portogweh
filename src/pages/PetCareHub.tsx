@@ -1,8 +1,80 @@
-import { Search, ShoppingCart, Star, ArrowUpRight, Play, ArrowRight, Plus } from "lucide-react";
+import { Search, ShoppingCart, Star, ArrowUpRight, Play, ArrowRight, Plus, Scissors, Stethoscope, Sun, Footprints } from "lucide-react";
+import { toast } from "sonner";
+import { useState } from "react";
 
-const CozyPaws = () => {
+const servicesList = [
+  {
+    icon: Scissors,
+    title: "Pet Grooming",
+    description: "Full grooming package including bath, haircut, nail trim",
+    price: "$45",
+  },
+  {
+    icon: Stethoscope,
+    title: "Veterinary Care",
+    description: "Check-ups, vaccinations, and health consultations",
+    price: "$35",
+  },
+  {
+    icon: Sun,
+    title: "Pet Daycare",
+    description: "Safe and fun daycare for your furry friends",
+    price: "$25/day",
+  },
+  {
+    icon: Footprints,
+    title: "Dog Walking",
+    description: "Professional dog walking service",
+    price: "$20/session",
+  },
+];
+
+interface Booking {
+  petName: string;
+  ownerName: string;
+  email: string;
+  phone: string;
+  service: string;
+  date: string;
+  time: string;
+  notes: string;
+}
+
+const PetCareHub = () => {
+  const [form, setForm] = useState<Booking>({
+    petName: "",
+    ownerName: "",
+    email: "",
+    phone: "",
+    service: "",
+    date: "",
+    time: "",
+    notes: "",
+  });
+
+  const [bookings, setBookings] = useState<Booking[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem("petcarehub_bookings") || "[]");
+    } catch {
+      return [];
+    }
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const updated = [...bookings, form];
+    setBookings(updated);
+    localStorage.setItem("petcarehub_bookings", JSON.stringify(updated));
+    toast.success("Appointment booked successfully!");
+    setForm({ petName: "", ownerName: "", email: "", phone: "", service: "", date: "", time: "", notes: "" });
+  };
+
   return (
-    <div className="h-screen flex flex-col overflow-hidden" style={{ backgroundColor: "#EFFDF0" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#EFFDF0" }}>
       <style>{`
         @keyframes fade-up {
           0% { opacity: 0; transform: translateY(30px); }
@@ -70,11 +142,12 @@ const CozyPaws = () => {
 
       {/* Header */}
       <header className="shrink-0 relative z-30 px-4 md:px-12 py-4 flex items-center justify-between">
-        <img
-          src="https://polo-pecan-73837341.figma.site/_assets/v11/0ae29d6d9628bede667f90d57bebe81b8f1ec2bf.svg"
-          alt="CozyPaws"
-          className="w-[130px] h-auto md:w-[205px] animate-fade-in delay-100"
-        />
+        <span
+          className="text-2xl md:text-3xl font-bold tracking-tight animate-fade-in delay-100"
+          style={{ color: "#1a3d1a" }}
+        >
+          PetCareHub
+        </span>
 
         <nav className="hidden md:flex items-center gap-8 animate-fade-in delay-200">
           {["Home", "Shop", "Delivery and payment", "Brands", "Blog"].map((item, i) => (
@@ -109,7 +182,7 @@ const CozyPaws = () => {
       </header>
 
       {/* Hero */}
-      <section className="flex-1 flex flex-col overflow-hidden relative">
+      <section className="min-h-screen flex flex-col overflow-hidden relative">
         {/* Desktop Heading (hidden below md) */}
         <div className="hidden md:block relative z-5 px-4 md:px-12 pt-[2rem] md:pt-[5.4rem]">
           <h1 className="font-serif-display tracking-tight" style={{ color: "#1a3d1a", fontSize: "clamp(60px,7.5vw,110px)", lineHeight: "0.95" }}>
@@ -302,8 +375,178 @@ const CozyPaws = () => {
           </div>
         </div>
       </section>
+
+      {/* Services Section */}
+      <section className="px-4 md:px-12 py-16 md:py-24" style={{ backgroundColor: "#EFFDF0" }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: "#1a3d1a" }}>
+            Our <span style={{ color: "#E86A10" }}>Services</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {servicesList.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="rounded-xl border bg-white p-6 flex flex-col items-start hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  style={{ borderColor: "#e0e8e0" }}
+                >
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: "#EFFDF0" }}>
+                    <Icon className="w-6 h-6" style={{ color: "#E86A10" }} />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: "#1a3d1a" }}>{service.title}</h3>
+                  <p className="text-sm flex-1" style={{ color: "#4B5563" }}>{service.description}</p>
+                  <p className="mt-3 text-lg font-bold" style={{ color: "#E86A10" }}>{service.price}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Appointment Booking Section */}
+      <section className="px-4 md:px-12 py-16 md:py-24" style={{ backgroundColor: "#EFFDF0" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ color: "#1a3d1a" }}>
+            Book an <span style={{ color: "#E86A10" }}>Appointment</span>
+          </h2>
+
+          <form onSubmit={handleSubmit} className="bg-white rounded-xl border p-6 md:p-8 space-y-5" style={{ borderColor: "#e0e8e0" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Pet Name</label>
+                <input
+                  type="text"
+                  name="petName"
+                  value={form.petName}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Owner Name</label>
+                <input
+                  type="text"
+                  name="ownerName"
+                  value={form.ownerName}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Service</label>
+                <select
+                  name="service"
+                  value={form.service}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                >
+                  <option value="">Select a service</option>
+                  {servicesList.map((s) => (
+                    <option key={s.title} value={s.title}>{s.title}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Preferred Date</label>
+                <input
+                  type="date"
+                  name="date"
+                  value={form.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Preferred Time</label>
+                <input
+                  type="time"
+                  name="time"
+                  value={form.time}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium mb-1" style={{ color: "#1a3d1a" }}>Notes</label>
+                <textarea
+                  name="notes"
+                  value={form.notes}
+                  onChange={handleChange}
+                  rows={3}
+                  className="w-full rounded-lg border px-3 py-2 text-sm outline-none focus:ring-2 transition resize-none"
+                  style={{ borderColor: "#d0d8d0", color: "#1a3d1a" }}
+                />
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-lg py-3 text-sm font-semibold text-white transition hover:opacity-90"
+              style={{ backgroundColor: "#E86A10" }}
+            >
+              Book Appointment
+            </button>
+          </form>
+
+          {/* Booking History */}
+          {bookings.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-xl font-bold mb-4" style={{ color: "#1a3d1a" }}>Booking History</h3>
+              <div className="space-y-3">
+                {bookings.map((b, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-xl border p-4 flex flex-wrap gap-x-6 gap-y-1 text-sm"
+                    style={{ borderColor: "#e0e8e0" }}
+                  >
+                    <span><strong>Pet:</strong> {b.petName}</span>
+                    <span><strong>Owner:</strong> {b.ownerName}</span>
+                    <span><strong>Service:</strong> {b.service}</span>
+                    <span><strong>Date:</strong> {b.date}</span>
+                    <span><strong>Time:</strong> {b.time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 };
 
-export default CozyPaws;
+export default PetCareHub;

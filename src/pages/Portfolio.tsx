@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ExternalLink, Globe, Monitor, Bot, Sparkles, Building2, Rocket, Cpu } from "lucide-react";
+import { ExternalLink, Globe, Monitor, Bot, Sparkles, Building2, GraduationCap, Rocket, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
@@ -145,6 +145,14 @@ const portfolioItems = [
     image: "/previews/nusastay.png",
     link: "https://nusa-stay.vercel.app",
     icon: Building2,
+  },
+  {
+    title: "EduSchool",
+    category: "company",
+    desc: "Website sekolah modern di Bali dengan design system Universitas Terbuka. 14 halaman, bilingual ID/EN, animasi Framer Motion, sticky navbar, counters interaktif. Next.js + Tailwind CSS v4.",
+    image: "/previews/eduschool.png",
+    link: "https://eduschool-liart.vercel.app",
+    icon: GraduationCap,
   },
 ];
 
